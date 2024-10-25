@@ -17,7 +17,17 @@ const __dirname = path.dirname(__filename);
 
 connectDb();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      String(process.env.article_v1),
+      String(process.env.article_v2),
+      String(process.env.article_v3),
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
