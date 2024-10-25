@@ -20,9 +20,9 @@ connectDb();
 app.use(
   cors({
     origin: [
-      String(process.env.article_v1),
-      String(process.env.article_v2),
-      String(process.env.article_v3),
+      String(process.env.Article_v1),
+      String(process.env.Article_v2),
+      String(process.env.Article_v3),
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
